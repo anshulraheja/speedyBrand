@@ -8,8 +8,9 @@
 .tab {
   padding: 8px 16px;
   background-color: #f2f2f2;
-  color: #333;
+  color: rgb(67, 67, 67);
   border: none;
+  font-weight: 700;
   border-radius: 4px;
   font-size: 14px;
   cursor: pointer;
@@ -17,8 +18,7 @@
 }
 
 .tab.active {
-  background-color: #007bff;
-  color: #fff;
+  border-bottom: 4px solid rgb(254, 88, 41);
 }
 
 @media screen and (max-width: 600px) {

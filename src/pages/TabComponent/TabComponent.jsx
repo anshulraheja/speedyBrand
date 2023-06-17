@@ -25,6 +25,8 @@ const TabComponent = () => {
     handleCloseEditor,
     tagColors,
     categories,
+    selectedTone,
+    handleToneChange,
   } = useAppContext();
 
   const filteredTopics =
@@ -70,6 +72,8 @@ const TabComponent = () => {
           handleEditorChange={handleEditorChange}
           handleGenerateText={handleGenerateText}
           handleCloseEditor={handleCloseEditor}
+          selectedTone={selectedTone}
+          handleToneChange={handleToneChange}
         />
       )}
     </div>

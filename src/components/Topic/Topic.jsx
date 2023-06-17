@@ -1,5 +1,6 @@
 import React from 'react';
 import './Topic.css';
+import { AiOutlineDelete } from 'react-icons/ai';
 
 const Topic = (props) => {
   const {
@@ -29,12 +30,12 @@ const Topic = (props) => {
             ))}
           </div>
           <div className="topic-buttons">
-            <button
+            <span
               className="delete-button"
               onClick={() => handleTopicDelete(topic._id)}
             >
-              Delete
-            </button>
+              <AiOutlineDelete />
+            </span>
             <button
               className="write-button"
               onClick={() => handleTopicClick(topic)}

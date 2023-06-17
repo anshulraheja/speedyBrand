@@ -26,10 +26,15 @@
 .editor-container {
   margin-top: 16px;
 }
-
+.tone-select {
+  padding: 4px 8px;
+  border: 1px solid rgb(254, 88, 41);
+  background: white;
+  color: rgb(254, 88, 41);
+}
 .generate-button {
   padding: 6px 12px;
-  background-color: #007bff;
+  background-color: rgb(254, 88, 41);
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -39,7 +44,10 @@
 }
 
 .generate-button:hover {
-  background-color: #0056b3;
+  background-color: rgb(254, 88, 41, 0.8);
+}
+.generate-button.disabled {
+  cursor: not-allowed;
 }
 
 .react-quill {

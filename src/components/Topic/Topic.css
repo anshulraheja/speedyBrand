@@ -13,6 +13,7 @@
 }
 
 .topic-title {
+  color: #262626;
   font-size: 18px;
   margin: 0;
 }
@@ -24,30 +25,39 @@
 .tag {
   display: inline-block;
   padding: 4px 8px;
-  background-color: #f2f2f2;
-  color: #333;
   font-size: 12px;
   border-radius: 4px;
-  margin-right: 4px;
+  margin: 0 8px 8px 0;
+  border: 1px solid;
+  font-weight: 500;
 }
 
 .topic-buttons {
   margin-top: 16px;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-.delete-button,
-.write-button {
-  padding: 6px 12px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  font-size: 14px;
+.delete-button {
+  color: rgb(254, 88, 41);
+  font-size: 16px;
   cursor: pointer;
-  margin-right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.write-button {
+  background-color: #fff;
+  color: rgb(254, 88, 41);
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .delete-button:hover,
 .write-button:hover {
-  background-color: #0056b3;
+  background-color: rgb(254, 88, 41, 0.1);
 }

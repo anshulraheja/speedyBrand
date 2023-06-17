@@ -8,14 +8,25 @@ const Editor = (props) => {
     handleEditorChange,
     handleGenerateText,
     handleCloseEditor,
+    selectedTone,
+    handleToneChange,
   } = props;
+
   return (
     <div className="write-modal">
       <div className="write-modal-content">
         <h2>Write</h2>
         <div className="form-group">
           <label htmlFor="tone">Tone:</label>
-          <select id="tone">
+          <select
+            id="tone"
+            className="tone-select"
+            value={selectedTone}
+            onChange={() => handleToneChange(event.target.value)}
+          >
+            <option value="" disabled>
+              Select an option
+            </option>
             <option value="casual">Casual</option>
             <option value="formal">Formal</option>
           </select>
@@ -29,11 +40,17 @@ const Editor = (props) => {
         </div>
         <div className="button-container">
           <button
-            className="generate-button"
+            className={`${
+              selectedTone == ''
+                ? 'generate-button disabled'
+                : 'generate-button'
+            }`}
             onClick={handleGenerateText}
+            disabled={selectedTone == '' ? true : false}
           >
             Generate
           </button>
+
           <button
             className="cancel-button"
             onClick={handleCloseEditor}

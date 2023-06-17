@@ -3,7 +3,6 @@ import { v4 as uuid } from 'uuid';
 
 import 'react-quill/dist/quill.snow.css';
 
-// Context to manage data storage
 const AppContext = React.createContext();
 
 const categories = ['All', 'Custom', 'ICP', 'Mission', 'Product'];
@@ -91,6 +90,7 @@ const AppProvider = ({ children }) => {
   const [selectedTopic, setSelectedTopic] = useState(null);
   const [editorContent, setEditorContent] = useState('');
   const [tagColors, setTagColors] = useState({});
+  const [selectedTone, setSelectedTone] = useState('');
 
   const openModal = () => {
     setModalOpen(true);
@@ -138,6 +138,8 @@ const AppProvider = ({ children }) => {
 
   const handleCloseEditor = () => {
     setSelectedTopic(null);
+    setSelectedTone('');
+    setEditorContent('');
   };
 
   const handleEditorChange = (content) => {
@@ -145,8 +147,6 @@ const AppProvider = ({ children }) => {
   };
 
   const handleGenerateText = () => {
-    // Handle text generation based on selected tone
-    // For now, let's generate a random lorem ipsum paragraph
     const loremIpsum =
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec tristique elit. Etiam condimentum vestibulum iaculis. Sed auctor, lacus id venenatis cursus, metus sem hendrerit nisi, non auctor nulla magna a dui. Praesent nec felis eu sem elementum finibus in a purus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam tincidunt libero vel sagittis tincidunt. Cras gravida vestibulum ante, ut lobortis nisi tincidunt nec. Donec at rutrum justo. Nulla a mi ac sem laoreet ullamcorper. Nunc tristique tempus elit, eget posuere urna dignissim sit amet. Morbi lacinia auctor sapien sed tempor. Quisque vel est elit. Nam rhoncus rutrum neque, ac congue lectus pretium id. Donec varius semper metus, vel placerat metus pharetra in. Aliquam feugiat eros ac orci tincidunt, sed sagittis ligula auctor.';
 
@@ -175,6 +175,9 @@ const AppProvider = ({ children }) => {
     setTagColors((prevColors) => ({ ...prevColors, ...colors }));
   }, [topics]);
 
+  const handleToneChange = (tone) => {
+    setSelectedTone(tone);
+  };
   return (
     <AppContext.Provider
       value={{
@@ -199,6 +202,8 @@ const AppProvider = ({ children }) => {
         handleCloseEditor,
         tagColors,
         categories,
+        selectedTone,
+        handleToneChange,
       }}
     >
       {children}

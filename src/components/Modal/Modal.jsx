@@ -19,7 +19,12 @@ const Modal = (props) => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="keywords">Keywords:</label>
+          <label htmlFor="keywords">
+            Keywords:{' '}
+            <span style={{ color: '#5b5b5b' }}>
+              (comma separated)
+            </span>
+          </label>
           <input
             type="text"
             id="keywords"
